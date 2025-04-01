@@ -1,0 +1,69 @@
+"""
+Configuration module for TradingLab.
+This module provides configuration settings and constants used throughout the application.
+"""
+
+from .settings import (
+    APP_NAME, APP_VERSION, APP_AUTHOR,
+    DB_CONFIG, DEFAULT_DB_TYPE,
+    DEFAULT_DATA_LIMIT, DEFAULT_LOOKBACK, PREDICTION_HORIZON,
+    DEFAULT_BATCH_SIZE, DEFAULT_EPOCHS,
+    DEFAULT_TRAIN_TEST_SPLIT, DEFAULT_VALIDATION_SPLIT,
+    LOG_LEVEL, LOG_FORMAT, LOG_DATE_FORMAT,
+    API_RATE_LIMIT, API_TIMEOUT,
+    DEBUG_MODE, ENABLE_TELEMETRY, CACHE_ENABLED, CACHE_EXPIRY,
+    INDICATOR_PARAMS
+)
+
+from .symbols import (
+    AssetClass, Symbol, Timeframe,
+    SYMBOLS, TIMEFRAMES,
+    get_symbol, get_timeframe, get_symbols_by_asset_class,
+    DEFAULT_SYMBOLS, DEFAULT_TIMEFRAMES,
+    DEFAULT_BACKTEST_TIMEFRAME, DEFAULT_PREDICTION_TIMEFRAME
+)
+
+from .paths import (
+    BASE_DIR, STORAGE_DIR, MODELS_DIR, 
+    DATA_DIR, RAW_DATA_DIR, PROCESSED_DATA_DIR,
+    DATABASE_DIR, REPORTS_DIR, LOGS_DIR,
+    CACHE_DIR, TEMP_DIR, EXPORTS_DIR,
+    STANDARD_MODEL_DIR, ADVANCED_MODEL_DIR, SCALER_DIR,
+    MODEL_REPORTS_DIR, BACKTEST_REPORTS_DIR,
+    SQLITE_DB_PATH,
+    MAIN_LOG_PATH, ERROR_LOG_PATH, DATA_LOG_PATH, MODEL_LOG_PATH,
+    create_directories,
+    get_model_path, get_report_path, get_data_path
+)
+
+__all__ = [
+    # From settings.py
+    'APP_NAME', 'APP_VERSION', 'APP_AUTHOR',
+    'DB_CONFIG', 'DEFAULT_DB_TYPE',
+    'DEFAULT_DATA_LIMIT', 'DEFAULT_LOOKBACK', 'PREDICTION_HORIZON',
+    'DEFAULT_BATCH_SIZE', 'DEFAULT_EPOCHS',
+    'DEFAULT_TRAIN_TEST_SPLIT', 'DEFAULT_VALIDATION_SPLIT',
+    'LOG_LEVEL', 'LOG_FORMAT', 'LOG_DATE_FORMAT',
+    'API_RATE_LIMIT', 'API_TIMEOUT',
+    'DEBUG_MODE', 'ENABLE_TELEMETRY', 'CACHE_ENABLED', 'CACHE_EXPIRY',
+    'INDICATOR_PARAMS',
+    
+    # From symbols.py
+    'AssetClass', 'Symbol', 'Timeframe',
+    'SYMBOLS', 'TIMEFRAMES',
+    'get_symbol', 'get_timeframe', 'get_symbols_by_asset_class',
+    'DEFAULT_SYMBOLS', 'DEFAULT_TIMEFRAMES',
+    'DEFAULT_BACKTEST_TIMEFRAME', 'DEFAULT_PREDICTION_TIMEFRAME',
+    
+    # From paths.py
+    'BASE_DIR', 'STORAGE_DIR', 'MODELS_DIR',
+    'DATA_DIR', 'RAW_DATA_DIR', 'PROCESSED_DATA_DIR',
+    'DATABASE_DIR', 'REPORTS_DIR', 'LOGS_DIR',
+    'CACHE_DIR', 'TEMP_DIR', 'EXPORTS_DIR',
+    'STANDARD_MODEL_DIR', 'ADVANCED_MODEL_DIR', 'SCALER_DIR',
+    'MODEL_REPORTS_DIR', 'BACKTEST_REPORTS_DIR',
+    'SQLITE_DB_PATH',
+    'MAIN_LOG_PATH', 'ERROR_LOG_PATH', 'DATA_LOG_PATH', 'MODEL_LOG_PATH',
+    'create_directories',
+    'get_model_path', 'get_report_path', 'get_data_path'
+]
