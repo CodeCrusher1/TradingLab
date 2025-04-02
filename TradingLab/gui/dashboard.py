@@ -1,7 +1,5 @@
 # Dashboard principale
 
-# Dashboard principale
-
 """
 Dashboard principale dell'applicazione TradingLab.
 Visualizza un riepilogo delle informazioni chiave e widget interattivi.
@@ -12,7 +10,7 @@ from PyQt6.QtWidgets import (
     QHeaderView
 )
 from PyQt6.QtCore import Qt, QSize, pyqtSignal, QTimer
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QColor  # Aggiungo QColor per convertire le stringhe di colore
 
 import pandas as pd
 import numpy as np
@@ -107,9 +105,9 @@ class MarketSummaryWidget(QWidget):
             
             # Imposta colore in base alla variazione
             if change > 0:
-                change_item.setForeground(style_manager.colors.SUCCESS)
+                change_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif change < 0:
-                change_item.setForeground(style_manager.colors.ERROR)
+                change_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.market_table.setItem(row, 2, change_item)
             
@@ -222,9 +220,9 @@ class WatchlistWidget(QWidget):
             
             # Imposta colore in base alla variazione
             if change > 0:
-                change_item.setForeground(style_manager.colors.SUCCESS)
+                change_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif change < 0:
-                change_item.setForeground(style_manager.colors.ERROR)
+                change_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.watchlist_table.setItem(row, 2, change_item)
             
@@ -240,9 +238,9 @@ class WatchlistWidget(QWidget):
             
             # Imposta colore in base al segnale
             if signal == "buy":
-                signal_item.setForeground(style_manager.colors.SUCCESS)
+                signal_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif signal == "sell":
-                signal_item.setForeground(style_manager.colors.ERROR)
+                signal_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.watchlist_table.setItem(row, 3, signal_item)
             
@@ -443,11 +441,11 @@ class CalendarWidget(QWidget):
             
             # Imposta colore in base all'impatto
             if impact == "high":
-                impact_item.setForeground(style_manager.colors.ERROR)
+                impact_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             elif impact == "medium":
-                impact_item.setForeground(style_manager.colors.WARNING)
+                impact_item.setForeground(QColor(style_manager.colors.WARNING))  # Converto la stringa in QColor
             else:
-                impact_item.setForeground(style_manager.colors.INFO)
+                impact_item.setForeground(QColor(style_manager.colors.INFO))  # Converto la stringa in QColor
             
             self.events_table.setItem(row, 3, impact_item)
 
@@ -550,9 +548,9 @@ class SignalsSummaryWidget(QWidget):
             
             # Imposta colore in base all'azione
             if action == "buy":
-                action_item.setForeground(style_manager.colors.SUCCESS)
+                action_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif action == "sell":
-                action_item.setForeground(style_manager.colors.ERROR)
+                action_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.signals_table.setItem(row, 2, action_item)
             
@@ -562,11 +560,11 @@ class SignalsSummaryWidget(QWidget):
             
             # Imposta colore in base alla confidenza
             if confidence >= 0.8:
-                confidence_item.setForeground(style_manager.colors.SUCCESS)
+                confidence_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif confidence >= 0.6:
-                confidence_item.setForeground(style_manager.colors.WARNING)
+                confidence_item.setForeground(QColor(style_manager.colors.WARNING))  # Converto la stringa in QColor
             else:
-                confidence_item.setForeground(style_manager.colors.ERROR)
+                confidence_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.signals_table.setItem(row, 3, confidence_item)
 
@@ -697,9 +695,9 @@ class PerformanceSummaryWidget(QWidget):
             
             # Imposta colore
             if ret > 0:
-                ret_item.setForeground(style_manager.colors.SUCCESS)
+                ret_item.setForeground(QColor(style_manager.colors.SUCCESS))  # Converto la stringa in QColor
             elif ret < 0:
-                ret_item.setForeground(style_manager.colors.ERROR)
+                ret_item.setForeground(QColor(style_manager.colors.ERROR))  # Converto la stringa in QColor
             
             self.strategies_table.setItem(row, 1, ret_item)
             

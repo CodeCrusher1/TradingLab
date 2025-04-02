@@ -7,11 +7,11 @@ Finestra principale dell'applicazione TradingLab.
 Contiene la barra dei menu, la barra degli strumenti e i widget principali.
 """
 from PyQt6.QtWidgets import (
-    QMainWindow, QTabWidget, QAction, QToolBar, QStatusBar, QWidget,
+    QMainWindow, QTabWidget, QToolBar, QStatusBar, QWidget,
     QVBoxLayout, QHBoxLayout, QSplitter, QMessageBox, QLabel, QMenu, QFileDialog
 )
 from PyQt6.QtCore import Qt, QSettings, QSize, QTimer
-from PyQt6.QtGui import QIcon, QKeySequence
+from PyQt6.QtGui import QIcon, QKeySequence, QAction
 
 import os
 import logging

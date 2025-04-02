@@ -1,0 +1,20 @@
+2025-04-02 09:55:45 - TradingLab - ERROR - Fatal error during application startup: setForeground(self, brush: Union[QBrush, Union[QColor, Qt.GlobalColor, int], QGradient]): argument 1 has unexpected type 'str'
+Traceback (most recent call last):
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\main.py", line 104, in main
+    main_window = MainWindow()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\main_window.py", line 41, in __init__
+    self.init_ui()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\main_window.py", line 74, in init_ui
+    self.dashboard_widget = DashboardWidget()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\dashboard.py", line 722, in __init__
+    self.initUI()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\dashboard.py", line 767, in initUI
+    self.market_summary = MarketSummaryWidget()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\dashboard.py", line 42, in __init__
+    self.initUI()
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\dashboard.py", line 67, in initUI
+    self.update_data([])
+  File "c:\Users\scalt\Desktop\TRADER LAB\TradingLab\gui\dashboard.py", line 110, in update_data
+    change_item.setForeground(style_manager.colors.SUCCESS)
+TypeError: setForeground(self, brush: Union[QBrush, Union[QColor, Qt.GlobalColor, int], QGradient]): argument 1 has unexpected type 'str'
+
